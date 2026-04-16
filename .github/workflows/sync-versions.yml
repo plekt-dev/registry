@@ -5,10 +5,7 @@ name: Sync plugin versions
 # must match the plugin's registry public_key), and commits any new
 # versions[] entries to main.
 #
-# The default GITHUB_TOKEN in this repo has enough scope (contents: write)
-# to commit directly to main when the branch ruleset grants an Actions
-# bypass, OR when required_approving_review_count is 0. Configure the
-# ruleset in .github/rulesets/protect-main.json accordingly.
+
 
 on:
   schedule:
@@ -16,7 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: sync-versions
@@ -28,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          token: ${{ secrets.SYNC_PAT }}
 
       - name: Setup Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0 (Node 24)
@@ -41,7 +40,7 @@ jobs:
 
       - name: Run sync
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SYNC_PAT }}
         run: |
           python3 scripts/sync-versions.py \
             --registry registry.json \

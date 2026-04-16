@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "updated_at": "2026-04-16T00:00:00Z",
+  "plugins": [
+    {
+      "name": "tasks-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Kanban for humans, MCP for agents. One board, same tasks. Per-project columns, task types, authored comments, eighteen MCP tools.",
+      "category": "productivity",
+      "tags": ["tasks", "kanban", "comments", "mcp"],
+      "public_key": "9dd8454c28f1720bc49c430011b423b3208bb93e36183edcc2b80e58f1777a44",
+      "official": true,
+      "versions": []
+    },
+    {
+      "name": "projects-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Workspaces for humans, MCP for agents. Group tasks, notes, and pomodoros into projects you can favourite, archive, and colour. Eight MCP tools.",
+      "category": "productivity",
+      "tags": ["projects", "workspaces", "foundational"],
+      "public_key": "1b960f2249a1742c735e61ac53c6fd9532a909b2438a69ca22d94c0cc1b55799",
+      "official": true,
+      "versions": []
+    },
+    {
+      "name": "notes-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Notes for humans, MCP for agents. Quick capture for fleeting thoughts, project docs and folders for structured knowledge, full revision history. Thirteen MCP tools.",
+      "category": "productivity",
+      "tags": ["notes", "docs", "knowledge", "history"],
+      "public_key": "0d96381b075ee6e0b66d370596b7e9a6ac77515c59a3ef0f8b21451af2d649ca",
+      "official": true,
+      "versions": []
+    },
+    {
+      "name": "pomodoro-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Timers for humans, MCP for agents. Work, task, and pause sessions with pause-resume, per-task stats, and live badges on kanban cards. Seven MCP tools.",
+      "category": "productivity",
+      "tags": ["time-tracking", "pomodoro", "timer"],
+      "public_key": "b74422ca2a3fdde30fd0f56ac9945007b4ea9d22d6d204a0d6cdc02eae53ecc2",
+      "official": true,
+      "versions": []
+    },
+    {
+      "name": "scheduler-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Schedule recurring prompts, dispatch them to chosen agents, track every fire and run. Week, month, and list views, seven MCP tools.",
+      "category": "automation",
+      "tags": ["cron", "scheduler", "jobs", "agents"],
+      "public_key": "00a60d74e701ae03a7ab38fde6a67c279dd21d390c085d621285c4f49ef393fa",
+      "official": true,
+      "versions": []
+    },
+    {
+      "name": "voice-plugin",
+      "author": "Plekt",
+      "license": "MIT",
+      "description": "Push-to-talk voice for every text field, MCP for agents. Plug in any Whisper-compatible endpoint (self-hosted or OpenAI), hold the mic, get text. Four MCP tools.",
+      "category": "integrations",
+      "tags": ["voice", "transcription", "whisper", "mcp"],
+      "public_key": "ed7cba7e0391ba8817c851cd5e477cfde7ce337ab630b10a4969354acf601cf6",
+      "official": true,
+      "versions": []
+    }
+  ]
+}

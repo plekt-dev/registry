@@ -1,0 +1,62 @@
+name: Sync plugin versions
+
+# Scheduled every 15 minutes + manual dispatch. Polls each enabled repo in
+# tracked-plugins.yaml, verifies the compromise gate (mcp.yaml signing key
+# must match the plugin's registry public_key), and commits any new
+# versions[] entries to main.
+#
+# The default GITHUB_TOKEN in this repo has enough scope (contents: write)
+# to commit directly to main when the branch ruleset grants an Actions
+# bypass, OR when required_approving_review_count is 0. Configure the
+# ruleset in .github/rulesets/protect-main.json accordingly.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-versions
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Setup Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0 (Node 24)
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install deps
+        run: pip install --quiet -r scripts/requirements.txt
+
+      - name: Run sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/sync-versions.py \
+            --registry registry.json \
+            --revoked revoked-keys.json \
+            --config tracked-plugins.yaml
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet registry.json; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git config user.email "actions@github.com"
+          git config user.name "plekt-registry-sync[bot]"
+          git add registry.json
+          git commit -m "auto: sync registry.json from GitHub Releases"
+          git push
+          echo "pushed registry.json update"

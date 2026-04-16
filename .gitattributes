@@ -1,0 +1,14 @@
+# Force LF line endings for everything the CI runner touches. Windows
+# checkouts still look normal in the editor, but the committed bytes are
+# always LF — YAML workflows and shell heredocs run on Linux runners
+# and break with CRLF.
+
+* text=auto eol=lf
+
+*.py  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md  text eol=lf
+CODEOWNERS text eol=lf
+.gitignore text eol=lf

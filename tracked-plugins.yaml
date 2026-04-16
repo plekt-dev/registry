@@ -1,0 +1,40 @@
+# Plugins whose GitHub Releases are polled by the scheduled sync workflow.
+#
+# The `.github/workflows/sync-versions.yml` action reads this file every 15
+# minutes. For each enabled entry it:
+#   1. Polls the plugin repo's GitHub Releases API.
+#   2. Downloads each new .mcpkg asset.
+#   3. Verifies the .mcpkg's mcp.yaml signature matches the plugin's
+#      `public_key` in registry.json (compromise gate).
+#   4. Updates `plugins[name].versions[]` in registry.json.
+#
+# Adding a plugin = PR against this file. Maintainer merges; next sync
+# tick picks up releases automatically.
+#
+# Temporarily stop tracking a plugin: set `enabled: false`.
+
+version: 1
+repos:
+  - github: plekt-dev/tasks-plugin
+    plugin: tasks-plugin
+    enabled: true
+
+  - github: plekt-dev/projects-plugin
+    plugin: projects-plugin
+    enabled: true
+
+  - github: plekt-dev/notes-plugin
+    plugin: notes-plugin
+    enabled: true
+
+  - github: plekt-dev/pomodoro-plugin
+    plugin: pomodoro-plugin
+    enabled: true
+
+  - github: plekt-dev/scheduler-plugin
+    plugin: scheduler-plugin
+    enabled: true
+
+  - github: plekt-dev/voice-plugin
+    plugin: voice-plugin
+    enabled: true

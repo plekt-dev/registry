@@ -1,0 +1,48 @@
+name: Validate PR
+
+# Runs on every PR against main. Ensures that:
+#   - registry.json is syntactically valid JSON and matches the schema
+#     (required fields present, public_key is 64 hex chars, etc.).
+#   - revoked-keys.json is valid JSON + every revoked entry has a plausible
+#     64-hex-char pubkey and a non-empty reason.
+#   - tracked-plugins.yaml is valid YAML with the expected shape.
+#
+# Community plugin additions always go through PR → CODEOWNERS → merge.
+# This workflow catches structural mistakes before the merge button lights up.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'registry.json'
+      - 'revoked-keys.json'
+      - 'tracked-plugins.yaml'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Setup Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0 (Node 24)
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install --quiet PyYAML jsonschema
+
+      - name: Validate registry.json
+        run: python3 scripts/validate-registry.py registry.json
+
+      - name: Validate revoked-keys.json
+        run: python3 scripts/validate-revoked.py revoked-keys.json
+
+      - name: Validate tracked-plugins.yaml
+        run: python3 scripts/validate-tracked.py tracked-plugins.yaml

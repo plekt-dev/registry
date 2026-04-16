@@ -110,6 +110,21 @@ def extract_mcp_yaml(mcpkg_bytes: bytes) -> bytes | None:
     return None
 
 
+def extract_manifest(mcpkg_bytes: bytes) -> dict | None:
+    """Return the parsed manifest.json from a .mcpkg, or None."""
+    try:
+        with tarfile.open(fileobj=io.BytesIO(mcpkg_bytes), mode="r:gz") as tar:
+            for member in tar.getmembers():
+                if os.path.basename(member.name) == "manifest.json" and member.isfile():
+                    f = tar.extractfile(member)
+                    if f is None:
+                        return None
+                    return json.loads(f.read())
+    except (tarfile.TarError, OSError, json.JSONDecodeError) as exc:
+        print(f"  ERROR extracting manifest.json: {exc}", file=sys.stderr)
+    return None
+
+
 def parse_signature_pubkey(mcp_yaml_bytes: bytes) -> str | None:
     """Return the mcp.yaml signature.public_key, or None."""
     try:
@@ -152,17 +167,26 @@ def build_entry(
     sha: str,
     size: int,
     existing: dict | None,
+    manifest: dict | None,
 ) -> dict:
+    manifest = manifest or {}
+    min_core = (
+        manifest.get("min_core_version")
+        or (existing or {}).get("min_core_version")
+        or "0.1.0"
+    )
     entry: dict = {
         "version": tag,
         "download_url": asset["browser_download_url"],
         "checksum_sha256": sha,
         "size_bytes": size,
-        "min_core_version": (existing or {}).get("min_core_version") or "0.1.0",
+        "min_core_version": min_core,
         "updated_at": iso_now(),
     }
     for key in ("dependencies", "optional_dependencies"):
-        if existing and key in existing:
+        if manifest.get(key):
+            entry[key] = manifest[key]
+        elif existing and key in existing:
             entry[key] = existing[key]
     return entry
 
@@ -243,7 +267,8 @@ def process_repo(
             )
             continue
 
-        entry = build_entry(asset, tag, sha, size, existing)
+        manifest = extract_manifest(mcpkg_bytes)
+        entry = build_entry(asset, tag, sha, size, existing, manifest)
         action = upsert_version(plugin, entry)
         if action != "unchanged":
             print(f"  {action} {plugin['name']} {tag}")

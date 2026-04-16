@@ -160,5 +160,54 @@
         }
       ]
     }
-  ]
+  ],
+  "core": {
+    "version": "1.0.1",
+    "release_notes": "bump version to 1.0.1",
+    "released_at": "2026-04-16T22:02:10Z",
+    "binaries": [
+      {
+        "os": "windows",
+        "arch": "amd64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_windows_amd64.zip",
+        "checksum_sha256": "1ccf0327d1f34ad528a63dca6c72315922db759773a3fcb9f9d542964bd3ad7d",
+        "size_bytes": 10453544
+      },
+      {
+        "os": "windows",
+        "arch": "arm64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_windows_arm64.zip",
+        "checksum_sha256": "0ce5ad7f53b6c4000642d4cdf764174d5f6cbebb5931ffd789752d190b3d9cd1",
+        "size_bytes": 9440279
+      },
+      {
+        "os": "darwin",
+        "arch": "amd64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_darwin_amd64.tar.gz",
+        "checksum_sha256": "f843c0addfcef2eee19dbca98ecaff64e4854e358db5b801821323fd94d70b9a",
+        "size_bytes": 10369140
+      },
+      {
+        "os": "darwin",
+        "arch": "arm64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_darwin_arm64.tar.gz",
+        "checksum_sha256": "7933023b8a70971ea337dad41c046975088897db6ef1c0159ed421ebd8199242",
+        "size_bytes": 9684641
+      },
+      {
+        "os": "linux",
+        "arch": "amd64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_linux_amd64.tar.gz",
+        "checksum_sha256": "20629f52603c946728041fab9e969d83e1801868a77a3eadcd10806d9b62ecbb",
+        "size_bytes": 10243184
+      },
+      {
+        "os": "linux",
+        "arch": "arm64",
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.1/plekt_1.0.1_linux_arm64.tar.gz",
+        "checksum_sha256": "8baa7a3c2dd476e9960f7235f167e9279c9db26e6a1ae1c63579ec7d15b45c35",
+        "size_bytes": 9366733
+      }
+    ]
+  }
 }

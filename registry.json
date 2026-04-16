@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-16T00:00:00Z",
+  "updated_at": "2026-04-16T11:35:11Z",
   "plugins": [
     {
       "name": "tasks-plugin",
@@ -8,10 +8,27 @@
       "license": "MIT",
       "description": "Kanban for humans, MCP for agents. One board, same tasks. Per-project columns, task types, authored comments, eighteen MCP tools.",
       "category": "productivity",
-      "tags": ["tasks", "kanban", "comments", "mcp"],
+      "tags": [
+        "tasks",
+        "kanban",
+        "comments",
+        "mcp"
+      ],
       "public_key": "9dd8454c28f1720bc49c430011b423b3208bb93e36183edcc2b80e58f1777a44",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/tasks-plugin/releases/download/1.0.0/tasks-plugin.mcpkg",
+          "checksum_sha256": "922d168ccfbe24ae4bc23a6609b98b832ba9e7d3004d54ea398b7f0780531805",
+          "size_bytes": 984979,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:07Z",
+          "dependencies": {
+            "projects-plugin": ">=1.0.0"
+          }
+        }
+      ]
     },
     {
       "name": "projects-plugin",
@@ -19,10 +36,23 @@
       "license": "MIT",
       "description": "Workspaces for humans, MCP for agents. Group tasks, notes, and pomodoros into projects you can favourite, archive, and colour. Eight MCP tools.",
       "category": "productivity",
-      "tags": ["projects", "workspaces", "foundational"],
+      "tags": [
+        "projects",
+        "workspaces",
+        "foundational"
+      ],
       "public_key": "1b960f2249a1742c735e61ac53c6fd9532a909b2438a69ca22d94c0cc1b55799",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/projects-plugin/releases/download/1.0.0/projects-plugin.mcpkg",
+          "checksum_sha256": "b6859c4f3bf2338bf307c5b57fc3c95be2b6254a04c51e446292e227fbef955b",
+          "size_bytes": 1069929,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:07Z"
+        }
+      ]
     },
     {
       "name": "notes-plugin",
@@ -30,10 +60,27 @@
       "license": "MIT",
       "description": "Notes for humans, MCP for agents. Quick capture for fleeting thoughts, project docs and folders for structured knowledge, full revision history. Thirteen MCP tools.",
       "category": "productivity",
-      "tags": ["notes", "docs", "knowledge", "history"],
+      "tags": [
+        "notes",
+        "docs",
+        "knowledge",
+        "history"
+      ],
       "public_key": "0d96381b075ee6e0b66d370596b7e9a6ac77515c59a3ef0f8b21451af2d649ca",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/notes-plugin/releases/download/1.0.0/notes-plugin.mcpkg",
+          "checksum_sha256": "bc2132f637a22ff4e8e2e565b4a7dc2c96f553f860083c8ca26e2b543ca8aff8",
+          "size_bytes": 997923,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:08Z",
+          "dependencies": {
+            "projects-plugin": ">=1.0.0"
+          }
+        }
+      ]
     },
     {
       "name": "pomodoro-plugin",
@@ -41,10 +88,27 @@
       "license": "MIT",
       "description": "Timers for humans, MCP for agents. Work, task, and pause sessions with pause-resume, per-task stats, and live badges on kanban cards. Seven MCP tools.",
       "category": "productivity",
-      "tags": ["time-tracking", "pomodoro", "timer"],
+      "tags": [
+        "time-tracking",
+        "pomodoro",
+        "timer"
+      ],
       "public_key": "b74422ca2a3fdde30fd0f56ac9945007b4ea9d22d6d204a0d6cdc02eae53ecc2",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/pomodoro-plugin/releases/download/1.0.0/pomodoro-plugin.mcpkg",
+          "checksum_sha256": "cf1a542346dc7d383da76b1b4c0326be0b8b4acdf0db03c5db932b776b4c29ce",
+          "size_bytes": 949432,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:09Z",
+          "dependencies": {
+            "projects-plugin": ">=1.0.0",
+            "tasks-plugin": ">=1.0.0"
+          }
+        }
+      ]
     },
     {
       "name": "scheduler-plugin",
@@ -52,10 +116,24 @@
       "license": "MIT",
       "description": "Schedule recurring prompts, dispatch them to chosen agents, track every fire and run. Week, month, and list views, seven MCP tools.",
       "category": "automation",
-      "tags": ["cron", "scheduler", "jobs", "agents"],
+      "tags": [
+        "cron",
+        "scheduler",
+        "jobs",
+        "agents"
+      ],
       "public_key": "00a60d74e701ae03a7ab38fde6a67c279dd21d390c085d621285c4f49ef393fa",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/scheduler-plugin/releases/download/1.0.0/scheduler-plugin.mcpkg",
+          "checksum_sha256": "8e649737b13f9394cbbe43972c563e2f242ccfb81db3f11356c174b79186a08e",
+          "size_bytes": 1101948,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:10Z"
+        }
+      ]
     },
     {
       "name": "voice-plugin",
@@ -63,10 +141,24 @@
       "license": "MIT",
       "description": "Push-to-talk voice for every text field, MCP for agents. Plug in any Whisper-compatible endpoint (self-hosted or OpenAI), hold the mic, get text. Four MCP tools.",
       "category": "integrations",
-      "tags": ["voice", "transcription", "whisper", "mcp"],
+      "tags": [
+        "voice",
+        "transcription",
+        "whisper",
+        "mcp"
+      ],
       "public_key": "ed7cba7e0391ba8817c851cd5e477cfde7ce337ab630b10a4969354acf601cf6",
       "official": true,
-      "versions": []
+      "versions": [
+        {
+          "version": "1.0.0",
+          "download_url": "https://github.com/plekt-dev/voice-plugin/releases/download/1.0.0/voice-plugin.mcpkg",
+          "checksum_sha256": "0531209adac1bf02480cd2d11e1a18531a93a71dcafaca8ae99a6ab14f46d3d6",
+          "size_bytes": 993594,
+          "min_core_version": "1.0.0",
+          "updated_at": "2026-04-16T11:35:11Z"
+        }
+      ]
     }
   ]
 }

@@ -162,51 +162,51 @@
     }
   ],
   "core": {
-    "version": "1.0.2",
-    "release_notes": "Default UI language is now always English",
-    "released_at": "2026-04-17T00:01:33Z",
+    "version": "1.0.3",
+    "release_notes": "Bundle IANA tzdata into the binary so cron timezone",
+    "released_at": "2026-04-17T01:59:58Z",
     "binaries": [
       {
         "os": "windows",
         "arch": "amd64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_windows_amd64.zip",
-        "checksum_sha256": "31d0ea39859f164447630a28854432bb6d2fa68f59fea4561ba2bf29d4cabbe3",
-        "size_bytes": 10453234
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_windows_amd64.zip",
+        "checksum_sha256": "30dbb7a421ade74ac7f440c371f00199ac13e13a59458eadbf1188c240bae577",
+        "size_bytes": 10552555
       },
       {
         "os": "windows",
         "arch": "arm64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_windows_arm64.zip",
-        "checksum_sha256": "fc7787ef501d45f5e9c9540db9a6155a38da50f5ab183aa1c26c4fb54f638fc6",
-        "size_bytes": 9440431
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_windows_arm64.zip",
+        "checksum_sha256": "e890db2b4fdb12456f454321ffaa7793d4087d7a58755982e9a999c4b98e4ca0",
+        "size_bytes": 9541516
       },
       {
         "os": "darwin",
         "arch": "amd64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_darwin_amd64.tar.gz",
-        "checksum_sha256": "b0ea8bdd7b4a1f85e01a2428167359b47b65a6b0c1d55719c96c5d734d68c9e7",
-        "size_bytes": 10369024
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_darwin_amd64.tar.gz",
+        "checksum_sha256": "032607ac33a858d3d37609a6b8363fa9b5dc734de808a45a4d69f93d3758905c",
+        "size_bytes": 10465470
       },
       {
         "os": "darwin",
         "arch": "arm64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_darwin_arm64.tar.gz",
-        "checksum_sha256": "fc1edc7e5d8361b5efe3c2fdf2e7523e08f6353363ec4cfe029f5b20b9777c3f",
-        "size_bytes": 9686081
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_darwin_arm64.tar.gz",
+        "checksum_sha256": "b59cfd3628f03ee5bc556bc5602c446e4f6815fb5c0681100688d4e9c6a352a8",
+        "size_bytes": 9790789
       },
       {
         "os": "linux",
         "arch": "amd64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_linux_amd64.tar.gz",
-        "checksum_sha256": "a7e1e61ec37998c8c331160cc55584fe143e55766b7ba54bb1b8fccd548fd1bf",
-        "size_bytes": 10244851
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_linux_amd64.tar.gz",
+        "checksum_sha256": "bef875f770b99edda281b8d1c562a269be38009929ea49cb062fd0fdb01fe755",
+        "size_bytes": 10341043
       },
       {
         "os": "linux",
         "arch": "arm64",
-        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.2/plekt_1.0.2_linux_arm64.tar.gz",
-        "checksum_sha256": "94c1ee88b4dec4320b57221f27d03044880a87ed28d89a64ed964c2f29af02e8",
-        "size_bytes": 9366240
+        "download_url": "https://github.com/plekt-dev/plekt/releases/download/1.0.3/plekt_1.0.3_linux_arm64.tar.gz",
+        "checksum_sha256": "cbfeea5c008ae2ba1bc1abe09cdc43912c6d2f2757e2ec21c17967cd169e2596",
+        "size_bytes": 9467584
       }
     ]
   }
